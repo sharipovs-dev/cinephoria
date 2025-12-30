@@ -1,0 +1,31 @@
+:root {
+  --color-bg: #120015;
+  --color-text: #ffffff;
+  --color-muted: #cfc6d8;
+  --color-accent: #ffb86b;
+  --color-link: #7bd389;
+  --color-danger: #ff6b6b;
+  --color-primary-bg-input:rgba(0, 0, 0, 0.200);
+}
+
+*,*::after,*::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  background: radial-gradient(circle at center, #2e003e, #1a001f 70%);
+  background-size: 400% 400%;
+  animation: cinematicShift 25s ease infinite;
+  color: #fff;
+  height: 2000px;
+}
+
+@keyframes cinematicShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

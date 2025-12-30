@@ -1,0 +1,5 @@
+@media (min-width: 1025px) {
+  .main-lists-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

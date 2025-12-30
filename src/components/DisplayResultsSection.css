@@ -1,0 +1,154 @@
+.main-lists-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+/* Card base */
+.list-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover only for larger screens */
+@media (hover: hover) and (pointer: fine) {
+  .list-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(128,0,192,0.6);
+    border: 1px solid rgba(176,102,255,0.4);
+  }
+}
+
+/* Poster container */
+.list-poster-container {
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  overflow: hidden;
+  position: relative;
+}
+.list-icon-wrapper{
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  z-index: 300;
+  padding: 0;
+  margin: 0;
+
+}
+.list-icon-favorite{
+  padding: 0;
+  margin: 0;
+  max-width:50px;
+  background-color: rgba(17, 17, 17, 0.600);
+}
+
+.list-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.list-card:hover .list-poster {
+  transform: scale(1.08);
+  filter: brightness(1.15) contrast(1.1);
+}
+
+/* Genre */
+.list-genre {
+  color: #b066ff;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Title */
+.list-card h3 {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  margin: 0.25rem 0;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* max 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+/* Rating */
+.list-rating {
+  background: #ffb400;
+  color: #111;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.list-rating::before {
+  content: "⭐";
+  font-size: 0.9rem;
+}
+
+/* Date */
+.list-date {
+  color: #bbb;
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.list-date::before {
+  content: "📅";
+  font-size: 0.9rem;
+}
+
+/* Bottom section */
+.list-date-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+/*  Mobile adjustments */
+@media (max-width: 600px) {
+  .main-lists-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .list-card {
+    min-height: auto;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .main-lists-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

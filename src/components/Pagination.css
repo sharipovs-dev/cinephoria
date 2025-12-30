@@ -1,0 +1,88 @@
+.pagination-root {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+}
+
+.page-list {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-list-item {
+}
+
+.page-btn {
+  background: linear-gradient(180deg, #1f2937, #111827);
+  color: #e5e7eb;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+  transition: transform .08s ease, box-shadow .1s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.page-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.page-btn.active {
+  background: linear-gradient(90deg,#7c3aed,#06b6d4);
+  color: white;
+  font-weight: 700;
+}
+
+.page-dots {
+  padding: 6px 8px;
+  color: #9ca3af;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.jump-input {
+  width: 72px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #e5e7eb;
+}
+
+.go-btn {
+  padding: 6px 10px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .pagination-root { gap: 8px; padding: 6px; }
+  .jump-input { width: 56px; }
+}
